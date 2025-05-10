@@ -12,10 +12,16 @@ namespace SistemaChamado
 {
     public partial class frmPrincipal : Form
     {
+
+       
         public frmPrincipal()
         {
             InitializeComponent();
         }
+
+       
+    
+
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -28,12 +34,45 @@ namespace SistemaChamado
             this.Hide();
         }
 
+
+        int tentativas = 0;
+       
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDiretorio frmDiretorio = new frmDiretorio(); 
-            frmDiretorio.ShowDialog();
-               
+
+            //BANCO DE DADOS
+            /////////////////////////////////////////
+            string usuario = txtNome.Text;
+            string senha = txtSenha.Text;
+
+            // Verifica se os dados estão corretos
+
+            if (usuario == "Luis" && senha == "1234")
+            {
+                tentativas = 0; // Reseta o contador em caso de sucesso
+                this.Hide();
+                frmDiretorio frmDiretorio = new frmDiretorio();
+                frmDiretorio.ShowDialog();
+            }
+            else
+            {
+                tentativas++; // Incrementa o contador de tentativas
+                if (tentativas >= 5)
+                {
+                    MessageBox.Show("Muitas tentativas falhas! Por favor, procure o administrador.", "Acesso Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                   
+                }
+                else
+                {
+                    MessageBox.Show($"Usuário ou senha incorretos! Tentativa {tentativas} de 5.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+
+
         }
+
     }
 }
