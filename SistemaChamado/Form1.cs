@@ -47,7 +47,7 @@ namespace SistemaChamado
 
             // Verifica se os dados estão corretos
 
-            if (usuario == "Luis" && senha == "1234")
+            if (usuario == "1234" && senha == "1234")
             {
                 tentativas = 0; // Reseta o contador em caso de sucesso
                 this.Hide();
