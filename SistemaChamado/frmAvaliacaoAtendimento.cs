@@ -54,6 +54,9 @@ namespace SistemaChamado
                 catch (FormatException)
                 {
                     MessageBox.Show("Todos os valores devem ser numéricos.");
+
+
+                    MessageBox.Show("Todos os valores devem ser numéricos.");
                 }
             }
             else
