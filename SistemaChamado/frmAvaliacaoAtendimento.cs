@@ -56,7 +56,7 @@ namespace SistemaChamado
                     MessageBox.Show("Todos os valores devem ser numéricos.");
 
 
-                    MessageBox.Show("Todos os valores devem ser numéricos.");
+                   
                 }
             }
             else
