@@ -50,52 +50,97 @@
             // 
             // cb1
             // 
+            this.cb1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb1.FormattingEnabled = true;
+            this.cb1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.cb1.Location = new System.Drawing.Point(471, 173);
             this.cb1.Name = "cb1";
-            this.cb1.Size = new System.Drawing.Size(116, 21);
+            this.cb1.Size = new System.Drawing.Size(116, 24);
             this.cb1.TabIndex = 1;
             // 
             // cb2
             // 
+            this.cb2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb2.FormattingEnabled = true;
+            this.cb2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.cb2.Location = new System.Drawing.Point(471, 232);
             this.cb2.Name = "cb2";
-            this.cb2.Size = new System.Drawing.Size(116, 21);
+            this.cb2.Size = new System.Drawing.Size(116, 24);
             this.cb2.TabIndex = 2;
             // 
             // cb3
             // 
+            this.cb3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb3.FormattingEnabled = true;
+            this.cb3.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.cb3.Location = new System.Drawing.Point(471, 292);
             this.cb3.Name = "cb3";
-            this.cb3.Size = new System.Drawing.Size(116, 21);
+            this.cb3.Size = new System.Drawing.Size(116, 24);
             this.cb3.TabIndex = 3;
             // 
             // cb4
             // 
+            this.cb4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb4.FormattingEnabled = true;
+            this.cb4.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.cb4.Location = new System.Drawing.Point(471, 353);
             this.cb4.Name = "cb4";
-            this.cb4.Size = new System.Drawing.Size(116, 21);
+            this.cb4.Size = new System.Drawing.Size(116, 24);
             this.cb4.TabIndex = 4;
             // 
             // cb5
             // 
+            this.cb5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb5.FormattingEnabled = true;
+            this.cb5.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.cb5.Location = new System.Drawing.Point(471, 411);
             this.cb5.Name = "cb5";
-            this.cb5.Size = new System.Drawing.Size(116, 21);
+            this.cb5.Size = new System.Drawing.Size(116, 24);
             this.cb5.TabIndex = 5;
             // 
             // btnAvaliacao
             // 
+            this.btnAvaliacao.FlatAppearance.BorderSize = 0;
+            this.btnAvaliacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvaliacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvaliacao.ForeColor = System.Drawing.Color.White;
             this.btnAvaliacao.Location = new System.Drawing.Point(665, 442);
             this.btnAvaliacao.Name = "btnAvaliacao";
-            this.btnAvaliacao.Size = new System.Drawing.Size(131, 32);
+            this.btnAvaliacao.Size = new System.Drawing.Size(108, 32);
             this.btnAvaliacao.TabIndex = 6;
-            this.btnAvaliacao.Text = "button1";
+            this.btnAvaliacao.Text = "Registrar";
             this.btnAvaliacao.UseVisualStyleBackColor = true;
+            this.btnAvaliacao.Click += new System.EventHandler(this.btnAvaliacao_Click);
             // 
             // lbLogin
             // 
