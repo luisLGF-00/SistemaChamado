@@ -43,6 +43,7 @@ namespace SistemaChamado
             this.Hide();
             frmRegistro frmRegistro = new frmRegistro();
             frmRegistro.ShowDialog();
+            this.Show();
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)

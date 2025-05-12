@@ -39,7 +39,7 @@ namespace SistemaChamado
         {
 
             MessageBox.Show("Salvo Com Sucesso");
-
+            this.Close();
         }
     }
 }
