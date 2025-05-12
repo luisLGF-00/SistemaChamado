@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAvaliacaoAtendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAvaliacaoAtendimento.Designer.cs">
+      <DependentUpon>frmAvaliacaoAtendimento.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDiretorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAvaliacaoAtendimento.resx">
+      <DependentUpon>frmAvaliacaoAtendimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiretorio.resx">
       <DependentUpon>frmDiretorio.cs</DependentUpon>
@@ -131,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Comunicação %28500 x 500 px%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DADOS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

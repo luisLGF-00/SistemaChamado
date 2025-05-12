@@ -55,15 +55,17 @@ namespace SistemaChamado
 
         private void ptbWhatsApp_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
+            frmAvaliacaoAtendimento.ShowDialog();
 
-
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = "https://wa.me/5527999084389", // Número formatado corretamente
-                    UseShellExecute = true
-                });
-            }
+            //{
+            //    Process.Start(new ProcessStartInfo
+            //    {
+            //        FileName = "https://wa.me/5527999084389", // Número formatado corretamente
+            //        UseShellExecute = true
+            //    });
+            //}
 
   
 
