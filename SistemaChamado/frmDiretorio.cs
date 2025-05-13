@@ -24,9 +24,7 @@ namespace SistemaChamado
             btnChamado.BackColor = Color.FromArgb(19, 83, 138);
             btnRelatorio.BackColor = Color.FromArgb(134, 234, 233);
             lbDiretorio.BackColor = Color.FromArgb(255, 255, 255);
-
-
-
+            btnCliente.BackColor = Color.FromArgb(55, 201, 239);
 
         }
 
@@ -58,18 +56,13 @@ namespace SistemaChamado
             this.Hide();
             frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
             frmAvaliacaoAtendimento.ShowDialog();
+        }
 
-            //{
-            //    Process.Start(new ProcessStartInfo
-            //    {
-            //        FileName = "https://wa.me/5527999084389", // Número formatado corretamente
-            //        UseShellExecute = true
-            //    });
-            //}
-
-  
-
-
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCadastro frmCadastro = new frmCadastro();
+            frmCadastro.ShowDialog();
         }
     }
 }

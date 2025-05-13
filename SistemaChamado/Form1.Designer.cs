@@ -33,6 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnInscreva = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +92,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnInscreva
+            // 
+            this.btnInscreva.FlatAppearance.BorderSize = 0;
+            this.btnInscreva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscreva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscreva.ForeColor = System.Drawing.Color.White;
+            this.btnInscreva.Location = new System.Drawing.Point(649, 298);
+            this.btnInscreva.Name = "btnInscreva";
+            this.btnInscreva.Size = new System.Drawing.Size(86, 26);
+            this.btnInscreva.TabIndex = 5;
+            this.btnInscreva.Text = "Inscreva-se";
+            this.btnInscreva.UseVisualStyleBackColor = true;
+            this.btnInscreva.Click += new System.EventHandler(this.btnInscreva_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInscreva);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbLogin);
@@ -119,6 +135,7 @@
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnInscreva;
     }
 }
 
