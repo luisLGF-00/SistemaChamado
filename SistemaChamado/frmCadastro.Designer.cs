@@ -192,7 +192,7 @@
             this.maskedTextBox1.Location = new System.Drawing.Point(30, 465);
             this.maskedTextBox1.Mask = "00.000.000.0000-00";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 19);
+            this.maskedTextBox1.Size = new System.Drawing.Size(158, 19);
             this.maskedTextBox1.TabIndex = 16;
             // 
             // pictureBox2
