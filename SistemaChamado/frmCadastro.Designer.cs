@@ -40,12 +40,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTipoCadastro = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -184,17 +184,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "CNPJ:";
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(30, 465);
-            this.maskedTextBox1.Mask = "00.000.000.0000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(158, 19);
-            this.maskedTextBox1.TabIndex = 16;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SistemaChamado.Properties.Resources.cad;
@@ -249,6 +238,17 @@
             this.lbTipoCadastro.TabIndex = 20;
             this.lbTipoCadastro.Text = "Cliente";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(30, 465);
+            this.maskedTextBox1.Mask = "00.000.000.0000-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(158, 19);
+            this.maskedTextBox1.TabIndex = 16;
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,10 +299,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTipoCadastro;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
