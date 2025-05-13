@@ -20,7 +20,7 @@ namespace SistemaChamado
         private void frmCadastro_Load(object sender, EventArgs e)
         {
             lbSenha.Visible = false;
-            txtSenha.Visible= false;
+            txtSenhaCadastro.Visible= false;
             lbTipoCadastro.Text = "Cliente";
             btnCadastrar.BackColor =Color.FromArgb(149, 190, 254);
         }

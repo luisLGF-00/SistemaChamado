@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.lbDiretorio = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtNomeCadastro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtSenhaCadastro = new System.Windows.Forms.TextBox();
             this.lbSenha = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTipoCadastro = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,16 +63,16 @@
             this.lbDiretorio.Text = "x";
             this.lbDiretorio.Click += new System.EventHandler(this.lbDiretorio_Click);
             // 
-            // txtNome
+            // txtNomeCadastro
             // 
-            this.txtNome.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(30, 125);
-            this.txtNome.Multiline = true;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(339, 37);
-            this.txtNome.TabIndex = 5;
+            this.txtNomeCadastro.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNomeCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNomeCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCadastro.Location = new System.Drawing.Point(30, 125);
+            this.txtNomeCadastro.Multiline = true;
+            this.txtNomeCadastro.Name = "txtNomeCadastro";
+            this.txtNomeCadastro.Size = new System.Drawing.Size(339, 37);
+            this.txtNomeCadastro.TabIndex = 5;
             // 
             // label1
             // 
@@ -85,16 +85,16 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Nome:";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(30, 213);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 37);
-            this.textBox1.TabIndex = 7;
+            this.txtEmail.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(30, 213);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(339, 37);
+            this.txtEmail.TabIndex = 7;
             // 
             // label2
             // 
@@ -107,16 +107,16 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "E-mail:";
             // 
-            // txtSenha
+            // txtSenhaCadastro
             // 
-            this.txtSenha.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(431, 125);
-            this.txtSenha.Multiline = true;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(339, 37);
-            this.txtSenha.TabIndex = 9;
+            this.txtSenhaCadastro.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSenhaCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSenhaCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaCadastro.Location = new System.Drawing.Point(431, 125);
+            this.txtSenhaCadastro.Multiline = true;
+            this.txtSenhaCadastro.Name = "txtSenhaCadastro";
+            this.txtSenhaCadastro.Size = new System.Drawing.Size(339, 37);
+            this.txtSenhaCadastro.TabIndex = 9;
             // 
             // lbSenha
             // 
@@ -129,16 +129,16 @@
             this.lbSenha.TabIndex = 10;
             this.lbSenha.Text = "Senha:";
             // 
-            // textBox3
+            // txtEndereco
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(30, 300);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(339, 37);
-            this.textBox3.TabIndex = 11;
+            this.txtEndereco.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.Location = new System.Drawing.Point(30, 300);
+            this.txtEndereco.Multiline = true;
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(339, 37);
+            this.txtEndereco.TabIndex = 11;
             // 
             // label4
             // 
@@ -162,16 +162,16 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Endereço:";
             // 
-            // textBox4
+            // txtTelefone
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(30, 380);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(339, 37);
-            this.textBox4.TabIndex = 14;
+            this.txtTelefone.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(30, 380);
+            this.txtTelefone.Multiline = true;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(339, 37);
+            this.txtTelefone.TabIndex = 14;
             // 
             // label6
             // 
@@ -183,25 +183,6 @@
             this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "CNPJ:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SistemaChamado.Properties.Resources.cad;
-            this.pictureBox2.Location = new System.Drawing.Point(488, 168);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(340, 332);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaChamado.Properties.Resources.Cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(843, 516);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnCadastrar
             // 
@@ -249,6 +230,25 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(158, 19);
             this.maskedTextBox1.TabIndex = 16;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SistemaChamado.Properties.Resources.cad;
+            this.pictureBox2.Location = new System.Drawing.Point(488, 168);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(340, 332);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaChamado.Properties.Resources.Cliente;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(843, 516);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,16 +260,16 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lbSenha);
-            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtSenhaCadastro);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtNomeCadastro);
             this.Controls.Add(this.lbDiretorio);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -288,16 +288,16 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbDiretorio;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtNomeCadastro;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.TextBox txtSenhaCadastro;
         private System.Windows.Forms.Label lbSenha;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCadastrar;
