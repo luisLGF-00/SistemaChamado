@@ -29,7 +29,7 @@ namespace SistemaChamado
         {
             lbLogin.BackColor = Color.FromArgb(76, 111, 191);
             btnAcessar.BackColor = Color.FromArgb(123, 150, 212);
-            btnInscreva.BackColor = Color.FromArgb(123, 150, 212);
+            btnAcessarCadastro.BackColor = Color.FromArgb(123, 150, 212);
         }
 
         private void lbLogin_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace SistemaChamado
 
         }
 
-        private void btnInscreva_Click(object sender, EventArgs e)
+        private void btnAcessarCadastro_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmCadastro frmCadastro = new frmCadastro();

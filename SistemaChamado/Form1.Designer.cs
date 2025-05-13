@@ -33,6 +33,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAcessarCadastro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +92,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAcessarCadastro
+            // 
+            this.btnAcessarCadastro.FlatAppearance.BorderSize = 0;
+            this.btnAcessarCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcessarCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcessarCadastro.ForeColor = System.Drawing.Color.White;
+            this.btnAcessarCadastro.Location = new System.Drawing.Point(652, 300);
+            this.btnAcessarCadastro.Name = "btnAcessarCadastro";
+            this.btnAcessarCadastro.Size = new System.Drawing.Size(81, 23);
+            this.btnAcessarCadastro.TabIndex = 5;
+            this.btnAcessarCadastro.Text = "Cadastrar";
+            this.btnAcessarCadastro.UseVisualStyleBackColor = true;
+            this.btnAcessarCadastro.Click += new System.EventHandler(this.btnAcessarCadastro_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAcessarCadastro);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbLogin);
@@ -119,6 +135,7 @@
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Button btnAcessarCadastro;
     }
 }
 
