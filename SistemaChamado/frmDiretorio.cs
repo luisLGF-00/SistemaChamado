@@ -60,6 +60,7 @@ namespace SistemaChamado
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
+            // this.Hide();
             this.Hide();
             frmCadastro frmCadastro = new frmCadastro();
             frmCadastro.ShowDialog();
