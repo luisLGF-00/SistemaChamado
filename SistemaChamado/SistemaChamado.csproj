@@ -59,6 +59,12 @@
     <Compile Include="frmAvaliacaoAtendimento.Designer.cs">
       <DependentUpon>frmAvaliacaoAtendimento.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastro.Designer.cs">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDiretorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAvaliacaoAtendimento.resx">
       <DependentUpon>frmAvaliacaoAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastro.resx">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiretorio.resx">
       <DependentUpon>frmDiretorio.cs</DependentUpon>
@@ -143,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DADOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

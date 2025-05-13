@@ -93,6 +93,26 @@ namespace SistemaChamado.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cad {
+            get {
+                object obj = ResourceManager.GetObject("cad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cliente {
+            get {
+                object obj = ResourceManager.GetObject("Cliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Comunicação__500_x_500_px_ {
             get {
                 object obj = ResourceManager.GetObject("Comunicação (500 x 500 px)", resourceCulture);
@@ -146,6 +166,16 @@ namespace SistemaChamado.Properties {
         internal static System.Drawing.Bitmap tela1 {
             get {
                 object obj = ResourceManager.GetObject("tela1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tela2 {
+            get {
+                object obj = ResourceManager.GetObject("Tela2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
