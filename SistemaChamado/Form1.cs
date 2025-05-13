@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaChamado
@@ -15,15 +9,10 @@ namespace SistemaChamado
     {
         string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
 
-
         public frmPrincipal()
         {
             InitializeComponent();
         }
-
-
-
-
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -37,15 +26,12 @@ namespace SistemaChamado
             this.Hide();
         }
 
-
         int tentativas = 0;
 
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-
                 string usuario = txtNome.Text;
                 string senha = txtSenha.Text;
                 try
@@ -86,16 +72,44 @@ namespace SistemaChamado
                     MessageBox.Show($"Erro ao conectar ao banco: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-
-
         }
 
         private void btnAcessarCadastro_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmCadastro frmCadastro = new frmCadastro();
-            frmCadastro.ShowDialog();
+            string senha = SolicitarSenhaAdmin();
+
+            if (senha == "admin")
+            {
+                this.Hide();
+                frmCadastro frmCadastro = new frmCadastro();
+                frmCadastro.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Senha incorreta! Acesso negado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string SolicitarSenhaAdmin()
+        {
+            Form senhaForm = new Form();
+            senhaForm.Text = "Autenticação";
+            senhaForm.Size = new Size(250, 150);
+            senhaForm.StartPosition = FormStartPosition.CenterParent;
+
+            Label lblMensagem = new Label { Text = "Digite a senha do administrador:", Dock = DockStyle.Top, TextAlign = ContentAlignment.MiddleCenter };
+            senhaForm.Controls.Add(lblMensagem);
+
+            TextBox txtSenha = new TextBox { PasswordChar = '*', Dock = DockStyle.Top, TextAlign = HorizontalAlignment.Center };
+            senhaForm.Controls.Add(txtSenha);
+
+            Button btnOk = new Button { Text = "OK", Dock = DockStyle.Bottom };
+            btnOk.Click += (sender, e) => senhaForm.DialogResult = DialogResult.OK;
+            senhaForm.Controls.Add(btnOk);
+
+            senhaForm.AcceptButton = btnOk;
+
+            return senhaForm.ShowDialog() == DialogResult.OK ? txtSenha.Text : string.Empty;
         }
     }
 }

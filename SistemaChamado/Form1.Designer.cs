@@ -32,8 +32,8 @@
             this.lbLogin = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAcessarCadastro = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +83,6 @@
             this.txtSenha.Size = new System.Drawing.Size(231, 36);
             this.txtSenha.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaChamado.Properties.Resources.tela1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(804, 456);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnAcessarCadastro
             // 
             this.btnAcessarCadastro.FlatAppearance.BorderSize = 0;
@@ -105,6 +96,15 @@
             this.btnAcessarCadastro.Text = "Cadastrar";
             this.btnAcessarCadastro.UseVisualStyleBackColor = true;
             this.btnAcessarCadastro.Click += new System.EventHandler(this.btnAcessarCadastro_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaChamado.Properties.Resources.tela1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(804, 456);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmPrincipal
             // 
