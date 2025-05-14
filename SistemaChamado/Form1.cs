@@ -91,8 +91,10 @@ namespace SistemaChamado
             if (senha == "admin")
             {
                 this.Hide();
-                frmCadastro frmCadastro = new frmCadastro();
-                frmCadastro.ShowDialog();
+                frmTelaCadastroUsuario frmTelaCadastroUsuario = new frmTelaCadastroUsuario();
+                frmTelaCadastroUsuario.ShowDialog();
+
+
             }
             else
             {
