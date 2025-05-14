@@ -10,36 +10,27 @@ using System.Windows.Forms;
 
 namespace SistemaChamado
 {
-    public partial class frmCadastro : Form
+    public partial class frmTelaCadastroUsuario : Form
     {
-        public frmCadastro()
+        public frmTelaCadastroUsuario()
         {
             InitializeComponent();
         }
 
-        private void frmCadastro_Load(object sender, EventArgs e)
-        {
-            lbSenha.Visible = false;
-            txtSenhaCadastro.Visible = false;
-            lbTipoCadastro.Text = "Cliente";
-            btnCadastrar.BackColor = Color.FromArgb(149, 190, 254);
-        }
-
         private void lbDiretorio_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmDiretorio frmDiretorio = new frmDiretorio();
-            frmDiretorio.ShowDialog();
+            
+                this.Hide();
+            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.ShowDialog();
+               
+
+             
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-
 
         }
     }

@@ -196,6 +196,7 @@
             this.btnCadastrar.TabIndex = 18;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // label3
             // 
@@ -233,7 +234,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SistemaChamado.Properties.Resources.cad;
-            this.pictureBox2.Location = new System.Drawing.Point(488, 168);
+            this.pictureBox2.Location = new System.Drawing.Point(432, 168);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(340, 332);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
