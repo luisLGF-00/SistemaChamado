@@ -33,19 +33,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSenhaCadastro = new System.Windows.Forms.TextBox();
-            this.lbSenha = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTipoCadastro = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.msktxtCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mktTelefone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,28 +105,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "E-mail:";
             // 
-            // txtSenhaCadastro
-            // 
-            this.txtSenhaCadastro.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSenhaCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSenhaCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaCadastro.Location = new System.Drawing.Point(431, 125);
-            this.txtSenhaCadastro.Multiline = true;
-            this.txtSenhaCadastro.Name = "txtSenhaCadastro";
-            this.txtSenhaCadastro.Size = new System.Drawing.Size(339, 37);
-            this.txtSenhaCadastro.TabIndex = 9;
-            // 
-            // lbSenha
-            // 
-            this.lbSenha.AutoSize = true;
-            this.lbSenha.BackColor = System.Drawing.Color.White;
-            this.lbSenha.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbSenha.Location = new System.Drawing.Point(427, 100);
-            this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(60, 20);
-            this.lbSenha.TabIndex = 10;
-            this.lbSenha.Text = "Senha:";
-            // 
             // txtEndereco
             // 
             this.txtEndereco.BackColor = System.Drawing.Color.Gainsboro;
@@ -161,17 +137,6 @@
             this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Endereço:";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(30, 380);
-            this.txtTelefone.Multiline = true;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(339, 37);
-            this.txtTelefone.TabIndex = 14;
             // 
             // label6
             // 
@@ -220,16 +185,16 @@
             this.lbTipoCadastro.TabIndex = 20;
             this.lbTipoCadastro.Text = "Cliente";
             // 
-            // maskedTextBox1
+            // msktxtCNPJ
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(30, 465);
-            this.maskedTextBox1.Mask = "00.000.000.0000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(158, 19);
-            this.maskedTextBox1.TabIndex = 16;
+            this.msktxtCNPJ.BackColor = System.Drawing.Color.Gainsboro;
+            this.msktxtCNPJ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.msktxtCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msktxtCNPJ.Location = new System.Drawing.Point(30, 465);
+            this.msktxtCNPJ.Mask = "00.000.000.0000-00";
+            this.msktxtCNPJ.Name = "msktxtCNPJ";
+            this.msktxtCNPJ.Size = new System.Drawing.Size(158, 19);
+            this.msktxtCNPJ.TabIndex = 16;
             // 
             // pictureBox2
             // 
@@ -250,23 +215,32 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // mktTelefone
+            // 
+            this.mktTelefone.BackColor = System.Drawing.Color.Gainsboro;
+            this.mktTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mktTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mktTelefone.Location = new System.Drawing.Point(33, 380);
+            this.mktTelefone.Mask = "(00) 0000-00000";
+            this.mktTelefone.Name = "mktTelefone";
+            this.mktTelefone.Size = new System.Drawing.Size(158, 19);
+            this.mktTelefone.TabIndex = 21;
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 512);
+            this.Controls.Add(this.mktTelefone);
             this.Controls.Add(this.lbTipoCadastro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.msktxtCNPJ);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEndereco);
-            this.Controls.Add(this.lbSenha);
-            this.Controls.Add(this.txtSenhaCadastro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
@@ -293,17 +267,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSenhaCadastro;
-        private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTipoCadastro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox msktxtCNPJ;
+        private System.Windows.Forms.MaskedTextBox mktTelefone;
     }
 }
