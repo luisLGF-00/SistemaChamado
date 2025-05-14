@@ -44,7 +44,7 @@ namespace SistemaChamado
             // Verificando se o email é válido (contém @gmail ou @outlook)
             if (!txtEmail.Text.EndsWith("@gmail.com") && !txtEmail.Text.EndsWith("@outlook.com") && !txtEmail.Text.EndsWith("@icluod.com"))
             {
-                MessageBox.Show("Insira um email valido","ERRO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Insira um email valido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
