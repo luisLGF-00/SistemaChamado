@@ -96,7 +96,7 @@
             this.txtSenha.BackColor = System.Drawing.Color.Gainsboro;
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(34, 317);
+            this.txtSenha.Location = new System.Drawing.Point(40, 317);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(339, 37);
