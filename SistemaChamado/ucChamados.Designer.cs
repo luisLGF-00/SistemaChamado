@@ -33,7 +33,6 @@
             this.lblData = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblPrioridade = new System.Windows.Forms.Label();
-            this.lblAvaliacao = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -50,10 +49,10 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescricao.Location = new System.Drawing.Point(18, 37);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(80, 20);
+            this.lblDescricao.Size = new System.Drawing.Size(89, 20);
             this.lblDescricao.TabIndex = 1;
             this.lblDescricao.Text = "Descriçao";
             // 
@@ -61,7 +60,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(160, 11);
+            this.lblData.Location = new System.Drawing.Point(143, 11);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(36, 16);
             this.lblData.TabIndex = 2;
@@ -71,7 +70,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(270, 11);
+            this.lblStatus.Location = new System.Drawing.Point(253, 11);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(44, 16);
             this.lblStatus.TabIndex = 3;
@@ -81,21 +80,11 @@
             // 
             this.lblPrioridade.AutoSize = true;
             this.lblPrioridade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrioridade.Location = new System.Drawing.Point(376, 11);
+            this.lblPrioridade.Location = new System.Drawing.Point(359, 11);
             this.lblPrioridade.Name = "lblPrioridade";
             this.lblPrioridade.Size = new System.Drawing.Size(70, 16);
             this.lblPrioridade.TabIndex = 4;
             this.lblPrioridade.Text = "Prioridade";
-            // 
-            // lblAvaliacao
-            // 
-            this.lblAvaliacao.AutoSize = true;
-            this.lblAvaliacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvaliacao.Location = new System.Drawing.Point(487, 11);
-            this.lblAvaliacao.Name = "lblAvaliacao";
-            this.lblAvaliacao.Size = new System.Drawing.Size(68, 16);
-            this.lblAvaliacao.TabIndex = 5;
-            this.lblAvaliacao.Text = "Avaliação";
             // 
             // label1
             // 
@@ -113,14 +102,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblAvaliacao);
             this.Controls.Add(this.lblPrioridade);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblNome);
             this.Name = "ucChamados";
-            this.Size = new System.Drawing.Size(636, 83);
+            this.Size = new System.Drawing.Size(448, 83);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +121,6 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblPrioridade;
-        private System.Windows.Forms.Label lblAvaliacao;
         private System.Windows.Forms.Label label1;
     }
 }
