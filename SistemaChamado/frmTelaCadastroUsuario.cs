@@ -22,18 +22,32 @@ namespace SistemaChamado
 
         private void lbDiretorio_Click(object sender, EventArgs e)
         {
-            
-                this.Hide();
+
+            this.Hide();
             frmPrincipal frmPrincipal = new frmPrincipal();
             frmPrincipal.ShowDialog();
-               
 
-             
-            
+
+
+
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            // Verificando se todos os campos estão preenchidos
+            if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtSenha.Text))
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Verificando se o email é válido (contém @gmail ou @outlook)
+            if (!txtEmail.Text.EndsWith("@gmail.com") && !txtEmail.Text.EndsWith("@outlook.com") && !txtEmail.Text.EndsWith("@icluod.com"))
+            {
+                MessageBox.Show("Insira um email valido","ERRO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
+
             // Consulta SQL para inserir um usuário na tabela tblUsuario
             string query = "INSERT INTO tblUsuario (Nome, Email, Senha) " +
                            "VALUES (@Nome, @Email, @Senha)";
@@ -44,8 +58,8 @@ namespace SistemaChamado
             {
                 // Adicionando os parâmetros com valores dos campos do formulário
                 cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text); // Você deve ter um TextBox para o email
-                cmd.Parameters.AddWithValue("@Senha", txtSenha.Text); // Você deve ter um TextBox para a senha
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
 
                 try
                 {
@@ -61,3 +75,4 @@ namespace SistemaChamado
         }
     }
 }
+
