@@ -41,31 +41,49 @@ namespace SistemaChamado
                 return;
             }
 
-            // Verificando se o email é válido (contém @gmail ou @outlook)
-            if (!txtEmail.Text.EndsWith("@gmail.com") && !txtEmail.Text.EndsWith("@outlook.com") && !txtEmail.Text.EndsWith("@icluod.com"))
+            // Verificando se o email é válido
+            if (!txtEmail.Text.EndsWith("@gmail.com") && !txtEmail.Text.EndsWith("@outlook.com") && !txtEmail.Text.EndsWith("@icloud.com"))
             {
-                MessageBox.Show("Insira um email valido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Insira um email válido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Consulta SQL para inserir um usuário na tabela tblUsuario
-            string query = "INSERT INTO tblUsuario (Nome, Email, Senha) " +
-                           "VALUES (@Nome, @Email, @Senha)";
-
-            // Criando a conexão e o comando
             using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                // Adicionando os parâmetros com valores dos campos do formulário
-                cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
-
                 try
                 {
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Usuário cadastrado com sucesso!");
+
+                    // Verificando se o email já existe no banco
+                    string checkEmailQuery = "SELECT COUNT(*) FROM tblUsuario WHERE Email = @Email";
+                    using (SqlCommand checkCmd = new SqlCommand(checkEmailQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        int count = (int)checkCmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("E-mail já cadastrado!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Se o email não existir, cadastrar o novo usuário
+                    string insertQuery = "INSERT INTO tblUsuario (Nome, Email, Senha) VALUES (@Nome, @Email, @Senha)";
+                    using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                    {
+                        insertCmd.Parameters.AddWithValue("@Nome", txtNome.Text);
+                        insertCmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        insertCmd.Parameters.AddWithValue("@Senha", txtSenha.Text);
+
+                        insertCmd.ExecuteNonQuery();
+                        MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpando os campos após cadastro bem-sucedido
+                        txtNome.Clear();
+                        txtEmail.Clear();
+                        txtSenha.Clear();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -75,4 +93,5 @@ namespace SistemaChamado
         }
     }
 }
+
 
