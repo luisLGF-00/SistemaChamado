@@ -52,8 +52,8 @@ namespace SistemaChamado
                                 reader.GetString(1),  // Descricao
                                 reader.GetDateTime(2),// Dt
                                 reader.GetString(3),  // Stts
-                                reader.GetString(4),  // Prioridade
-                                reader.IsDBNull(5) ? "" : reader.GetString(5) // Avaliacao
+                                reader.GetString(4)  // Prioridade
+                                //reader.IsDBNull(5) ? "" : reader.GetString(5) // Avaliacao
                             );
 
                             // Adiciona o ChamadoUC no FlowLayoutPanel
@@ -95,11 +95,6 @@ namespace SistemaChamado
             CarregarChamados();
         }
 
-        // Evento do background worker (não está sendo utilizado no código atual)
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // Não está implementado, você pode adicionar processamento assíncrono aqui, se necessário
-        }
     }
 
 }
