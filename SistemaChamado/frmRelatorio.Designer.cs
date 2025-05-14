@@ -43,12 +43,8 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbRelatorio = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.ucChamados1 = new SistemaChamado.ucChamados();
             this.tbcDashboard.SuspendLayout();
             this.tbcListas.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbcBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -82,7 +78,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.ucChamados1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(301, 6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(747, 508);
@@ -165,18 +160,6 @@
             this.lbRelatorio.Text = "x";
             this.lbRelatorio.Click += new System.EventHandler(this.lbRelatorio_Click);
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // ucChamados1
-            // 
-            this.ucChamados1.Location = new System.Drawing.Point(4, 5);
-            this.ucChamados1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucChamados1.Name = "ucChamados1";
-            this.ucChamados1.Size = new System.Drawing.Size(743, 83);
-            this.ucChamados1.TabIndex = 0;
-            // 
             // frmRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,7 +175,6 @@
             this.Load += new System.EventHandler(this.frmRelatorio_Load);
             this.tbcDashboard.ResumeLayout(false);
             this.tbcListas.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tbcBoard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
@@ -214,8 +196,5 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private ucChamados ucChamados1;
     }
 }

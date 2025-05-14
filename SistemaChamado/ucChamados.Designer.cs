@@ -34,6 +34,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblPrioridade = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -97,10 +98,23 @@
             this.label1.Text = "_________________________________________________________________________________" +
     "_________";
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(354, 41);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(50, 23);
+            this.btnAlterar.TabIndex = 7;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            // 
             // ucChamados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPrioridade);
             this.Controls.Add(this.lblStatus);
@@ -122,5 +136,6 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblPrioridade;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }
