@@ -25,6 +25,7 @@ namespace SistemaChamado
             lblStatus.Text = $"Status: {status}";
             lblPrioridade.Text = $"Prioridade: {prioridade}";
             lblAvaliacao.Text = $"Avaliação: {(string.IsNullOrEmpty(avaliacao) ? "N/A" : avaliacao)}";
+            //
         }
     }
 }
