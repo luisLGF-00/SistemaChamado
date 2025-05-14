@@ -22,6 +22,7 @@ namespace SistemaChamado
         public frmRelatorio()
         {
             InitializeComponent();
+
         }
 
         // Método para carregar os chamados do banco de dados
