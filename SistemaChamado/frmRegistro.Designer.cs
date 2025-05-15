@@ -127,9 +127,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SistemaChamado.Properties.Resources._3;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(2, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(841, 499);
+            this.pictureBox1.Size = new System.Drawing.Size(841, 501);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
