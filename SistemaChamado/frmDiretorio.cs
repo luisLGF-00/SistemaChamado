@@ -34,6 +34,7 @@ namespace SistemaChamado
             this.Hide();
             frmPrincipal frmPrincipal = new frmPrincipal();
             frmPrincipal.ShowDialog();
+            this.Close();
         }
 
         private void btnChamado_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace SistemaChamado
             this.Hide();
             frmRegistro frmRegistro = new frmRegistro();
             frmRegistro.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace SistemaChamado
             this.Hide();
             frmRelatorio frmRelatorio = new frmRelatorio();
             frmRelatorio.ShowDialog();
+            this.Close();
 
         }
 
@@ -57,6 +59,7 @@ namespace SistemaChamado
             this.Hide();
             frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
             frmAvaliacaoAtendimento.ShowDialog();
+            this.Close();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -65,6 +68,7 @@ namespace SistemaChamado
             this.Hide();
             frmCadastro frmCadastro = new frmCadastro();
             frmCadastro.ShowDialog();
+            this.Close();
         }
     }
 }
