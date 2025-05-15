@@ -36,6 +36,8 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.cbPrioridade = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtIdChamado = new System.Windows.Forms.TextBox();
+            this.lbIdChamado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +135,34 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // txtIdChamado
+            // 
+            this.txtIdChamado.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtIdChamado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdChamado.Location = new System.Drawing.Point(54, 44);
+            this.txtIdChamado.Multiline = true;
+            this.txtIdChamado.Name = "txtIdChamado";
+            this.txtIdChamado.Size = new System.Drawing.Size(147, 43);
+            this.txtIdChamado.TabIndex = 10;
+            // 
+            // lbIdChamado
+            // 
+            this.lbIdChamado.AutoSize = true;
+            this.lbIdChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdChamado.Location = new System.Drawing.Point(55, 26);
+            this.lbIdChamado.Name = "lbIdChamado";
+            this.lbIdChamado.Size = new System.Drawing.Size(24, 18);
+            this.lbIdChamado.TabIndex = 11;
+            this.lbIdChamado.Text = "ID";
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 500);
+            this.Controls.Add(this.lbIdChamado);
+            this.Controls.Add(this.txtIdChamado);
             this.Controls.Add(this.cbPrioridade);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.txtData);
@@ -167,5 +192,7 @@
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.ComboBox cbPrioridade;
+        private System.Windows.Forms.TextBox txtIdChamado;
+        private System.Windows.Forms.Label lbIdChamado;
     }
 }
