@@ -8,7 +8,7 @@ namespace SistemaChamado
 {
     public partial class frmRegistro : Form
     {
-        private readonly string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
+        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
 
         public frmRegistro()
         {
