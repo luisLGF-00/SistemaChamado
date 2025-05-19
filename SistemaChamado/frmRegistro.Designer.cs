@@ -69,11 +69,11 @@
             // txtCliente
             // 
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(54, 129);
             this.txtCliente.Multiline = true;
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(542, 43);
+            this.txtCliente.Size = new System.Drawing.Size(546, 42);
             this.txtCliente.TabIndex = 5;
             // 
             // txtDescricao
@@ -89,11 +89,11 @@
             // txtData
             // 
             this.txtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtData.Location = new System.Drawing.Point(614, 129);
             this.txtData.Multiline = true;
             this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(147, 43);
+            this.txtData.Size = new System.Drawing.Size(149, 42);
             this.txtData.TabIndex = 7;
             // 
             // cbStatus
@@ -139,11 +139,11 @@
             // 
             this.txtIdChamado.BackColor = System.Drawing.SystemColors.Menu;
             this.txtIdChamado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdChamado.Location = new System.Drawing.Point(54, 44);
             this.txtIdChamado.Multiline = true;
             this.txtIdChamado.Name = "txtIdChamado";
-            this.txtIdChamado.Size = new System.Drawing.Size(147, 43);
+            this.txtIdChamado.Size = new System.Drawing.Size(121, 27);
             this.txtIdChamado.TabIndex = 10;
             // 
             // lbIdChamado
