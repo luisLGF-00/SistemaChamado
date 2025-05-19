@@ -34,7 +34,7 @@ namespace SistemaChamado
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado ORDER BY Dt DESC";
+                    string query = "SELECT idChamado, Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado ORDER BY Dt DESC";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -48,12 +48,12 @@ namespace SistemaChamado
 
                             // Passa os dados para o UserControl
                             uc.SetDados(
-                                reader.GetString(0),  // Nome
-                                reader.GetString(1),  // Descricao
-                                reader.GetDateTime(2),// Dt
-                                reader.GetString(3),  // Stts
-                                reader.GetString(4)  // Prioridade
-                                //reader.IsDBNull(5) ? "" : reader.GetString(5) // Avaliacao
+                            reader.GetString(1),  // Nome
+                            reader.GetString(2),  // Descricao
+                            reader.GetDateTime(3),// Dt
+                            reader.GetString(4),  // Stts
+                            reader.GetString(5),  // Prioridade
+                            reader.GetInt32(0)    // idChamado
                             );
 
                             // Adiciona o ChamadoUC no FlowLayoutPanel

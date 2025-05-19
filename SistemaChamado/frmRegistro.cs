@@ -183,5 +183,43 @@ namespace SistemaChamado
             var frmDiretorio = new frmDiretorio();
             frmDiretorio.Show();
         }
+
+
+        public void CarregarChamadoPorId(int idChamado)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    // Consulta SQL para pegar os dados de um chamado específico pelo ID
+                    string query = "SELECT Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado WHERE idChamado = @IdChamado";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IdChamado", idChamado);
+                        conn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            // Preenche os controles do frmRelatorio com os dados do banco
+                            txtCliente.Text = $"Cliente: {reader.GetString(0)}";
+                            txtDescricao.Text = $"Descrição: {reader.GetString(1)}";
+                            txtData.Text = $"Data: {reader.GetDateTime(2).ToShortDateString()}";
+                            cbStatus.Text = $"Status: {reader.GetString(3)}";
+                            cbPrioridade.Text = $"Prioridade: {reader.GetString(4)}";
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os dados do chamado: " + ex.Message);
+            }
+        }
+
+
+
     }
 }
