@@ -127,6 +127,7 @@ namespace SistemaChamado
                                     : string.Empty;
 
                                 txtDescricao.Text = reader["Descricao"].ToString();
+                                
 
                                 // Adicionando os valores ao ComboBox antes de selecionar
                                 cbStatus.Items.Clear();
@@ -202,7 +203,7 @@ namespace SistemaChamado
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     // Consulta SQL para pegar os dados de um chamado específico pelo ID
-                    string query = "SELECT Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado WHERE idChamado = @IdChamado";
+                    string query = "SELECT idChamado, Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado WHERE idChamado = @IdChamado";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -213,11 +214,12 @@ namespace SistemaChamado
                         if (reader.Read())
                         {
                             // Preenche os controles do frmRelatorio com os dados do banco
-                            txtCliente.Text = $"Cliente: {reader.GetString(0)}";
-                            txtDescricao.Text = $"Descrição: {reader.GetString(1)}";
-                            txtData.Text = $"Data: {reader.GetDateTime(2).ToShortDateString()}";
-                            cbStatus.Text = $"Status: {reader.GetString(3)}";
-                            cbPrioridade.Text = $"Prioridade: {reader.GetString(4)}";
+                            txtIdChamado.Text = reader["idChamado"].ToString();
+                            txtCliente.Text = $"Cliente: {reader["Nome"]}";
+                            txtDescricao.Text = $"Descrição: {reader["Descricao"]}";
+                            txtData.Text = $"Data: {Convert.ToDateTime(reader["Dt"]).ToShortDateString()}";
+                            cbStatus.Text = $"Status: {reader["Stts"]}";
+                            cbPrioridade.Text = $"Prioridade: {reader["Prioridade"]}";
 
                         }
                     }

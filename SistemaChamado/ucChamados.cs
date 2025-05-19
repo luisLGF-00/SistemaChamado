@@ -55,23 +55,40 @@ namespace SistemaChamado
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            // Pega o ID do chamado atual
+
+            // // Pega o ID do chamado atual
+            // int idChamado = this.IdChamado;
+
+            // // Fecha o formulário atual (frmRelatorio)
+            //// this.Hide();
+
+            // // Cria o formulário de registro
+            // frmRegistro frmRegistro = new frmRegistro();
+
+            // // Passa o ID do chamado
+            // frmRegistro.CarregarChamadoPorId(idChamado);
+
+            // // Exibe o formulário como modal
+            // frmRegistro.ShowDialog();
+
+            // // Após o fechamento do frmRegistro, reabre e atualiza o frmRelatorio
+            // this.Show();
+
             int idChamado = this.IdChamado;
 
-            // Fecha o formulário atual (frmRelatorio)
-            this.Hide();
+            // Obtem o formulário pai da UserControl
+            Form frmRelatorio = this.FindForm();
 
-            // Cria o formulário de registro
+            // Oculta o formulário pai
+            frmRelatorio.Hide();
+
+            // Cria e exibe o formulário de registro
             frmRegistro frmRegistro = new frmRegistro();
-
-            // Passa o ID do chamado
             frmRegistro.CarregarChamadoPorId(idChamado);
-
-            // Exibe o formulário como modal
             frmRegistro.ShowDialog();
 
-            // Após o fechamento do frmRegistro, reabre e atualiza o frmRelatorio
-            this.Show();
+            // Reexibe o formulário pai após o fechamento do frmRegistro
+            frmRelatorio.Show();
 
         }
     }
