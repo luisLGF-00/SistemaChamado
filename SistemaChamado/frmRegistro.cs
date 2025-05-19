@@ -34,6 +34,16 @@ namespace SistemaChamado
         private void frmRegistro_Load(object sender, EventArgs e)
         {
             CarregarCombosIniciais();
+            txtIdChamado.KeyDown += txtIdChamado_KeyDown;
+
+        }
+        private void txtIdChamado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Verifica se a tecla pressionada foi "Enter"
+            {
+                e.SuppressKeyPress = true; // Evita o som padrão do "Enter" no campo de texto
+                BuscarPorIdChamado(txtIdChamado.Text);
+            }
         }
 
         private void CarregarCombosIniciais()
@@ -218,8 +228,5 @@ namespace SistemaChamado
                 MessageBox.Show("Erro ao carregar os dados do chamado: " + ex.Message);
             }
         }
-
-
-
     }
 }
