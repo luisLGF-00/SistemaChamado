@@ -16,9 +16,7 @@ namespace SistemaChamado
 
             // Eventos de saída dos campos
             txtIdChamado.Leave += txtIdChamado_Leave;
-            txtCliente.Leave += txtCliente_Leave;
-            txtData.Leave += txtData_Leave;
-            txtDescricao.Leave += txtDescricao_Leave;
+            
             cbPrioridade.SelectedIndexChanged += cbPrioridade_SelectedIndexChanged;
             pictureBox1.Click += pictureBox1_Click;
 
@@ -144,144 +142,6 @@ namespace SistemaChamado
             }
         }
 
-        private void BuscarPorNome(string nome)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT TOP 1 Dt, Descricao, Stts, Prioridade FROM tblChamado WHERE Nome = @nome";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@nome", nome);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                if (reader["Dt"] != DBNull.Value)
-                                {
-                                    DateTime dt = Convert.ToDateTime(reader["Dt"]);
-                                    txtData.Text = dt.ToString("dd/MM/yyyy");
-                                }
-                                else
-                                {
-                                    txtData.Clear();
-                                }
-                                txtDescricao.Text = reader["Descricao"].ToString();
-                                cbStatus.SelectedItem = reader["Stts"].ToString();
-                                cbPrioridade.SelectedItem = reader["Prioridade"].ToString();
-                            }
-                            else
-                            {
-                                LimparCampos(limparIdChamado: false);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao buscar pelo nome:\n{ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void BuscarPorData(string data)
-        {
-            if (!DateTime.TryParseExact(data, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime dataConvertida))
-            {
-                MessageBox.Show("Formato de data inválido. Use o formato dd/MM/yyyy.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT TOP 1 Nome, Descricao, Stts, Prioridade FROM tblChamado WHERE Dt = @data";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.Add("@data", SqlDbType.Date).Value = dataConvertida;
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                txtCliente.Text = reader["Nome"].ToString();
-                                txtDescricao.Text = reader["Descricao"].ToString();
-                                cbStatus.SelectedItem = reader["Stts"].ToString();
-                                cbPrioridade.SelectedItem = reader["Prioridade"].ToString();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Nenhum chamado encontrado com esta data.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LimparCampos(limparIdChamado: false);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao buscar pela data:\n{ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void BuscarPorDescricao(string descricao)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT TOP 1 Nome, Dt, Stts, Prioridade FROM tblChamado WHERE Descricao LIKE @descricao";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                txtCliente.Text = reader["Nome"].ToString();
-                                if (reader["Dt"] != DBNull.Value)
-                                {
-                                    DateTime dt = Convert.ToDateTime(reader["Dt"]);
-                                    txtData.Text = dt.ToString("dd/MM/yyyy");
-                                }
-                                else
-                                {
-                                    txtData.Clear();
-                                }
-                                cbStatus.SelectedItem = reader["Stts"].ToString();
-                                cbPrioridade.SelectedItem = reader["Prioridade"].ToString();
-                            }
-                            else
-                            {
-                                LimparCampos(limparIdChamado: false);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao buscar pela descrição:\n{ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void BuscarPorPrioridade(string prioridade)
-        {
-
-        }
-
-        // Eventos dos campos
-
         private void txtIdChamado_Leave(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtIdChamado.Text))
@@ -294,31 +154,10 @@ namespace SistemaChamado
                 LimparCampos();
             }
         }
-
-        private void txtCliente_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtCliente.Text))
-                BuscarPorNome(txtCliente.Text);
-        }
-
-        private void txtData_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtData.Text))
-                BuscarPorData(txtData.Text);
-        }
-
-        private void txtDescricao_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtDescricao.Text))
-                BuscarPorDescricao(txtDescricao.Text);
-        }
-
-
-
         private void cbPrioridade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbPrioridade.SelectedItem != null)
-                BuscarPorPrioridade(cbPrioridade.SelectedItem.ToString());
+            if (cbPrioridade.SelectedItem != null);
+               
         }
 
         // Limpar campos ao clicar na picturebox, respeitando o ID
