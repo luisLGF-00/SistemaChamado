@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace SistemaChamado
@@ -182,10 +184,49 @@ namespace SistemaChamado
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // TODO: implementar lógica real de salvar
-            MessageBox.Show("Salvo com sucesso!");
-            this.Close();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"INSERT INTO tblChamado (Nome, Dt, Descricao, Stts, Prioridade) 
+                             VALUES (@Nome, @Dt, @Descricao, @Stts, @Prioridade)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", txtCliente.Text);
+
+                        DateTime dataChamado;
+                        if (DateTime.TryParse(txtData.Text, out dataChamado))
+                        {
+                            cmd.Parameters.AddWithValue("@Dt", dataChamado);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@Dt", DBNull.Value);
+                        }
+
+                        cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
+                        cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Chamado salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar chamado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+
+
 
         private void lbLogin_Click(object sender, EventArgs e)
         {
