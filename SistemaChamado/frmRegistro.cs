@@ -215,11 +215,11 @@ namespace SistemaChamado
                         {
                             // Preenche os controles do frmRelatorio com os dados do banco
                             txtIdChamado.Text = reader["idChamado"].ToString();
-                            txtCliente.Text = $"Cliente: {reader["Nome"]}";
-                            txtDescricao.Text = $"Descrição: {reader["Descricao"]}";
-                            txtData.Text = $"Data: {Convert.ToDateTime(reader["Dt"]).ToShortDateString()}";
-                            cbStatus.Text = $"Status: {reader["Stts"]}";
-                            cbPrioridade.Text = $"Prioridade: {reader["Prioridade"]}";
+                            txtCliente.Text = $"{reader["Nome"]}";
+                            txtDescricao.Text = $"{reader["Descricao"]}";
+                            txtData.Text = $"{Convert.ToDateTime(reader["Dt"]).ToShortDateString()}";
+                            cbStatus.Text = $"{reader["Stts"]}";
+                            cbPrioridade.Text = $"{reader["Prioridade"]}";
 
                         }
                     }
