@@ -33,11 +33,11 @@ namespace SistemaChamado
 
         public void SetDados(string nome, string descricao, DateTime data, string status, string prioridade, int idChamado)
         {
-            lblNome.Text = $"Cliente: {nome}";
-            lblDescricao.Text = $"Descrição: {descricao}";
-            lblData.Text = $"Data: {data.ToShortDateString()}";
-            lblStatus.Text = $"Status: {status}";
-            lblPrioridade.Text = $"Prioridade: {prioridade}";
+            lblNome.Text = $"{nome}";
+            lblDescricao.Text = $"{descricao}";
+            lblData.Text = $"{data.ToShortDateString()}";
+            lblStatus.Text = $"{status}";
+            lblPrioridade.Text = $"{prioridade}";
 
             this.IdChamado = idChamado;
 
