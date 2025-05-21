@@ -66,10 +66,10 @@
             this.txtNomeCadastro.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNomeCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCadastro.Location = new System.Drawing.Point(30, 125);
+            this.txtNomeCadastro.Location = new System.Drawing.Point(28, 130);
             this.txtNomeCadastro.Multiline = true;
             this.txtNomeCadastro.Name = "txtNomeCadastro";
-            this.txtNomeCadastro.Size = new System.Drawing.Size(339, 37);
+            this.txtNomeCadastro.Size = new System.Drawing.Size(339, 25);
             this.txtNomeCadastro.TabIndex = 5;
             // 
             // label1
@@ -88,10 +88,10 @@
             this.txtEmail.BackColor = System.Drawing.Color.Gainsboro;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(30, 213);
+            this.txtEmail.Location = new System.Drawing.Point(30, 204);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 37);
+            this.txtEmail.Size = new System.Drawing.Size(339, 25);
             this.txtEmail.TabIndex = 7;
             // 
             // label2
@@ -99,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(29, 180);
+            this.label2.Location = new System.Drawing.Point(29, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 8;
@@ -110,10 +110,10 @@
             this.txtEndereco.BackColor = System.Drawing.Color.Gainsboro;
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(30, 300);
+            this.txtEndereco.Location = new System.Drawing.Point(30, 280);
             this.txtEndereco.Multiline = true;
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(339, 37);
+            this.txtEndereco.Size = new System.Drawing.Size(339, 25);
             this.txtEndereco.TabIndex = 11;
             // 
             // label4
@@ -121,7 +121,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(29, 357);
+            this.label4.Location = new System.Drawing.Point(29, 317);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 12;
@@ -132,7 +132,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(27, 274);
+            this.label5.Location = new System.Drawing.Point(27, 254);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 13;
@@ -143,7 +143,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(29, 430);
+            this.label6.Location = new System.Drawing.Point(29, 387);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 15;
@@ -190,10 +190,10 @@
             this.msktxtCNPJ.BackColor = System.Drawing.Color.Gainsboro;
             this.msktxtCNPJ.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.msktxtCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msktxtCNPJ.Location = new System.Drawing.Point(30, 465);
+            this.msktxtCNPJ.Location = new System.Drawing.Point(30, 422);
             this.msktxtCNPJ.Mask = "00.000.000.0000-00";
             this.msktxtCNPJ.Name = "msktxtCNPJ";
-            this.msktxtCNPJ.Size = new System.Drawing.Size(158, 19);
+            this.msktxtCNPJ.Size = new System.Drawing.Size(155, 19);
             this.msktxtCNPJ.TabIndex = 16;
             // 
             // pictureBox2
@@ -220,10 +220,10 @@
             this.mktTelefone.BackColor = System.Drawing.Color.Gainsboro;
             this.mktTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mktTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mktTelefone.Location = new System.Drawing.Point(33, 380);
+            this.mktTelefone.Location = new System.Drawing.Point(33, 349);
             this.mktTelefone.Mask = "(00) 0000-00000";
             this.mktTelefone.Name = "mktTelefone";
-            this.mktTelefone.Size = new System.Drawing.Size(158, 19);
+            this.mktTelefone.Size = new System.Drawing.Size(125, 19);
             this.mktTelefone.TabIndex = 21;
             // 
             // frmCadastro

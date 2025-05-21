@@ -99,7 +99,7 @@
             this.txtSenha.Location = new System.Drawing.Point(40, 317);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(339, 37);
+            this.txtSenha.Size = new System.Drawing.Size(339, 25);
             this.txtSenha.TabIndex = 23;
             // 
             // label1
@@ -121,7 +121,7 @@
             this.txtNome.Location = new System.Drawing.Point(40, 190);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(339, 37);
+            this.txtNome.Size = new System.Drawing.Size(339, 25);
             this.txtNome.TabIndex = 21;
             // 
             // pictureBox2
@@ -176,7 +176,7 @@
             this.txtEmail.Location = new System.Drawing.Point(40, 254);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 37);
+            this.txtEmail.Size = new System.Drawing.Size(339, 25);
             this.txtEmail.TabIndex = 31;
             // 
             // frmTelaCadastroUsuario
