@@ -93,6 +93,26 @@ namespace SistemaChamado.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Anotação_2025_05_21_193122 {
+            get {
+                object obj = ResourceManager.GetObject("Anotação 2025-05-21 193122", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Anotação_2025_05_21_1931221 {
+            get {
+                object obj = ResourceManager.GetObject("Anotação 2025-05-21 1931221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cad {
             get {
                 object obj = ResourceManager.GetObject("cad", resourceCulture);

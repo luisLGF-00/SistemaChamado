@@ -67,20 +67,20 @@
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(502, 184);
+            this.txtNome.Location = new System.Drawing.Point(506, 192);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(231, 37);
+            this.txtNome.Size = new System.Drawing.Size(212, 21);
             this.txtNome.TabIndex = 3;
             // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(502, 258);
+            this.txtSenha.Location = new System.Drawing.Point(507, 266);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(231, 36);
+            this.txtSenha.Size = new System.Drawing.Size(214, 23);
             this.txtSenha.TabIndex = 4;
             // 
             // pictureBox1

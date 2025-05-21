@@ -35,11 +35,13 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDiretorio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +101,7 @@
             this.txtSenha.Location = new System.Drawing.Point(40, 317);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(339, 37);
+            this.txtSenha.Size = new System.Drawing.Size(339, 27);
             this.txtSenha.TabIndex = 23;
             // 
             // label1
@@ -121,28 +123,9 @@
             this.txtNome.Location = new System.Drawing.Point(40, 190);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(339, 37);
+            this.txtNome.Size = new System.Drawing.Size(339, 26);
             this.txtNome.TabIndex = 21;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SistemaChamado.Properties.Resources.cad;
-            this.pictureBox2.Location = new System.Drawing.Point(410, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(340, 332);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaChamado.Properties.Resources.Cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(824, 516);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lbDiretorio
             // 
@@ -176,8 +159,38 @@
             this.txtEmail.Location = new System.Drawing.Point(40, 254);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 37);
+            this.txtEmail.Size = new System.Drawing.Size(339, 26);
             this.txtEmail.TabIndex = 31;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SistemaChamado.Properties.Resources.Anotação_2025_05_21_193122;
+            this.pictureBox3.Location = new System.Drawing.Point(28, 190);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(351, 26);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SistemaChamado.Properties.Resources.cad;
+            this.pictureBox2.Location = new System.Drawing.Point(410, 92);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(340, 332);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaChamado.Properties.Resources.Cliente;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(824, 516);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // frmTelaCadastroUsuario
             // 
@@ -196,10 +209,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTelaCadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTelaCadastroUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -221,5 +236,6 @@
         private System.Windows.Forms.Label lbDiretorio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
