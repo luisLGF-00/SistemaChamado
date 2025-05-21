@@ -22,6 +22,7 @@ namespace SistemaChamado
         public frmRelatorio()
         {
             InitializeComponent();
+            AtualizarGraficos(); // Atualiza ao iniciar o formulário
 
         }
 
@@ -34,8 +35,8 @@ namespace SistemaChamado
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                   string query = "SELECT idChamado, Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado ORDER BY Dt DESC";
-                    
+                    string query = "SELECT idChamado, Nome, Descricao, Dt, Stts, Prioridade, Avaliacao FROM tblChamado ORDER BY Dt DESC";
+
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         conn.Open();
@@ -79,18 +80,6 @@ namespace SistemaChamado
         // Evento Load do formulário
         private void frmRelatorio_Load(object sender, EventArgs e)
         {
-            // Configura os gráficos
-            chart1.Series["Series1"].Points.AddXY("andamento", 20);
-            chart1.Series["Series1"].Points.AddXY("concluido", 50);
-            chart1.Series["Series1"].Points.AddXY("aberto", 30);
-
-            chart2.Series["Series1"].Points.AddXY("Alta", 50);
-            chart2.Series["Series1"].Points.AddXY("Média", 20);
-            chart2.Series["Series1"].Points.AddXY("Baixa", 30);
-
-            chart1.Titles.Add("Status dos Chamados");
-            chart2.Titles.Add("Prioridade");
-
 
             // OPÇÕES DO COMBOBOX FILTRO
             cbStatusFiltro.Items.Add("Todos");
@@ -168,6 +157,151 @@ namespace SistemaChamado
                 CarregarChamados(statusSelecionado);
             }
         }
-    }
 
+
+        //////////////////////CÓDIGO PARA ATUALIZAÇÃO DOS GRÁFICOS/////////////////////////////
+
+        private void AtualizarGraficos()
+        {
+            AtualizarChart1();
+            AtualizarChart2();
+            AtualizarChart3();
+            AtualizarChart4();
+        }
+
+        //Chamados por Status NO CHART2
+        private void AtualizarChart1()
+        {
+            string query = "SELECT Stts, COUNT(*) AS Total FROM tblChamado GROUP BY Stts";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                chart1.Series.Clear();
+                Series serie = new Series("Chamados por Status");
+                serie.ChartType = SeriesChartType.Pie;
+                serie.IsValueShownAsLabel = true;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    serie.Points.AddXY(row["Stts"].ToString(), Convert.ToInt32(row["Total"]));
+                }
+
+                chart1.Series.Add(serie);
+                chart1.Titles.Clear();
+                chart1.Titles.Add("Chamados por Status");
+            }
+        }
+        //Avaliação média por Prioridade NO CHART2
+        private void AtualizarChart2()
+        {
+            string query = "SELECT Prioridade, AVG(Avaliacao) AS MediaAvaliacao FROM tblChamado WHERE Avaliacao IS NOT NULL GROUP BY Prioridade";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                chart2.Series.Clear();
+                Series serie = new Series("Média de Avaliação");
+                serie.ChartType = SeriesChartType.Column;
+                serie.IsValueShownAsLabel = true;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    string prioridade = row["Prioridade"].ToString();
+                    double media = Convert.ToDouble(row["MediaAvaliacao"]);
+                    serie.Points.AddXY(prioridade, media);
+                }
+
+                chart2.Series.Add(serie);
+                chart2.Titles.Clear();
+                chart2.Titles.Add("Média de Avaliação por Prioridade");
+            }
+        }
+
+        //CHAMADOS POR PRIORIDADE NO CHART3
+        private void AtualizarChart3()
+        {
+            string query = "SELECT Prioridade, COUNT(*) AS Total FROM tblChamado GROUP BY Prioridade";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                chart3.Series.Clear();
+                Series serie = new Series("Chamados por Prioridade");
+                serie.ChartType = SeriesChartType.Bar;
+                serie.IsValueShownAsLabel = true;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    serie.Points.AddXY(row["Prioridade"].ToString(), Convert.ToInt32(row["Total"]));
+                }
+
+                chart3.Series.Add(serie);
+                chart3.Titles.Clear();
+                chart3.Titles.Add("Chamados por Prioridade");
+            }
+        }
+
+        
+        //CHAMADOS POR CLIENTE NO CHART3
+        private void AtualizarChart4()
+        {
+            string query = @"
+                SELECT c.Nome AS Cliente, COUNT(*) AS TotalChamados
+                FROM tblChamado ch
+                INNER JOIN tblCliente c ON ch.idCliente = c.idCliente
+                GROUP BY c.Nome";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                chart4.Series.Clear();
+                Series serie = new Series("Chamados por Cliente");
+                serie.ChartType = SeriesChartType.Column; 
+                serie.IsValueShownAsLabel = true;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    serie.Points.AddXY(row["Cliente"].ToString(), Convert.ToInt32(row["TotalChamados"]));
+                }
+
+                chart4.Series.Add(serie);
+                chart4.Titles.Clear();
+                chart4.Titles.Add("Chamados por Cliente");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
