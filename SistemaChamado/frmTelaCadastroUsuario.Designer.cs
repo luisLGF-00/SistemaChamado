@@ -96,10 +96,10 @@
             this.txtSenha.BackColor = System.Drawing.Color.Gainsboro;
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(40, 317);
+            this.txtSenha.Location = new System.Drawing.Point(41, 317);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(339, 37);
+            this.txtSenha.Size = new System.Drawing.Size(339, 30);
             this.txtSenha.TabIndex = 23;
             // 
             // label1
@@ -118,10 +118,10 @@
             this.txtNome.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(40, 190);
+            this.txtNome.Location = new System.Drawing.Point(41, 198);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(339, 37);
+            this.txtNome.Size = new System.Drawing.Size(339, 30);
             this.txtNome.TabIndex = 21;
             // 
             // pictureBox2
@@ -173,10 +173,10 @@
             this.txtEmail.BackColor = System.Drawing.Color.Gainsboro;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(40, 254);
+            this.txtEmail.Location = new System.Drawing.Point(41, 254);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 37);
+            this.txtEmail.Size = new System.Drawing.Size(339, 30);
             this.txtEmail.TabIndex = 31;
             // 
             // frmTelaCadastroUsuario
