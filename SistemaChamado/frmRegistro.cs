@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -49,13 +50,48 @@ namespace SistemaChamado
             CarregarCombosIniciais();
             txtIdChamado.KeyDown += txtIdChamado_KeyDown;
             VerificarID();
-
+            cbNomeCliente.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (Verificador == 1)
             {
                 cbNomeCliente.Visible = true;
 
-            }
+
+
+                using (SqlConnection conexao = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conexao.Open();
+                        string query = "SELECT   idCliente, Nome  FROM tblCliente";
+                        SqlCommand cmd = new SqlCommand(query, conexao);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        cbNomeCliente.Items.Clear(); // Limpa os itens antes de adicionar novos
+                        while (reader.Read())
+                        {
+                            cbNomeCliente.Items.Add(reader["Nome"].ToString());
+
+                        }
+
+
+                        if (cbNomeCliente.Items.Count > 0)
+                        {
+                            cbNomeCliente.SelectedIndex = 0; // Seleciona o primeiro item automaticamente
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao carregar nomes: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conexao.Close(); // Certifique-se de fechar a conexão
+                    }
+                }
+
+
+                }
             else
             {
                 cbNomeCliente.Visible = false;
