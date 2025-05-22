@@ -69,7 +69,7 @@ namespace SistemaChamado
                 BuscarPorIdChamado(txtIdChamado.Text);
             }
         }
-
+        //
         private void VerificarID()
         {
             string query = @"SELECT ISNULL (MAX(idChamado), 0) AS MaiorId FROM tblChamado";
