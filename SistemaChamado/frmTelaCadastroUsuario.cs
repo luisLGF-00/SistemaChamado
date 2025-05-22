@@ -55,6 +55,13 @@ namespace SistemaChamado
                 return;
             }
 
+            // Verificando se a senha contém pelo menos 3 letras ou números
+            if (txtSenha.Text.Length < 3)
+            {
+                MessageBox.Show("A senha deve conter pelo menos 3 letras ou números.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -98,6 +105,7 @@ namespace SistemaChamado
                 }
             }
         }
+
 
     }
 }
