@@ -43,13 +43,17 @@ namespace SistemaChamado
                     double v5 = Convert.ToDouble(cb5.Text);
 
                     // Calcula a média
-                    double media = (v1 + v2 + v3 + v4 + v5) / 5;
+                    double Resultado = (v1 + v2 + v3 + v4 + v5) / 5;
+
+                    this.Hide();
+                    frmRegistro registro = new frmRegistro(Resultado);
+                    registro.Show();
 
                     // Mostra a média
 
                     // inserir aqui para registrar no banco de dados os valor
 
-                    MessageBox.Show("A média é: " + media.ToString("F2"));
+                    MessageBox.Show("A média é: " + Resultado.ToString("F2"));
                 }
                 catch (FormatException)
                 {
