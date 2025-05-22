@@ -87,6 +87,8 @@ namespace SistemaChamado
             cbStatusFiltro.Items.Add("Em andamento");
             cbStatusFiltro.Items.Add("Fechado");
 
+            //tbcBoard.BackColor = Color.FromArgb(65, 103, 164);
+
             cbStatusFiltro.SelectedIndex = 0; // Default para "Todos"
 
 
@@ -193,6 +195,8 @@ namespace SistemaChamado
                 chart1.Series.Add(serie);
                 chart1.Titles.Clear();
                 chart1.Titles.Add("Chamados por Status");
+                EstilizarChart(chart1);
+                
             }
         }
         //Avaliação média por Prioridade NO CHART2
@@ -221,6 +225,9 @@ namespace SistemaChamado
                 chart2.Series.Add(serie);
                 chart2.Titles.Clear();
                 chart2.Titles.Add("Média de Avaliação por Prioridade");
+                EstilizarChart(chart2);
+                chart2.ChartAreas[0].AxisY.Enabled = AxisEnabled.False;
+                chart2.Legends.Clear();
             }
         }
 
@@ -248,6 +255,9 @@ namespace SistemaChamado
                 chart3.Series.Add(serie);
                 chart3.Titles.Clear();
                 chart3.Titles.Add("Chamados por Prioridade");
+                EstilizarChart(chart3);
+                chart3.ChartAreas[0].AxisY.Enabled = AxisEnabled.False;
+                chart3.Legends.Clear();
             }
         }
 
@@ -280,16 +290,54 @@ namespace SistemaChamado
                 chart4.Series.Add(serie);
                 chart4.Titles.Clear();
                 chart4.Titles.Add("Chamados por Cliente");
+                EstilizarChart(chart4);
+                chart4.ChartAreas[0].AxisY.Enabled = AxisEnabled.False;
+                chart4.Legends.Clear();
             }
         }
 
+        //estilização dos graficos
+        private void EstilizarChart(Chart chart)
+        {
+            // Remover linhas de grade
+            foreach (ChartArea area in chart.ChartAreas)
+            {
+                area.BackColor = Color.White; // Fundo branco
+                area.BorderWidth = 0;
+                area.AxisX.MajorGrid.Enabled = false;
+                area.AxisY.MajorGrid.Enabled = false;
+                area.AxisX.LineWidth = 0;
+                area.AxisY.LineWidth = 0;
+                area.AxisX.LabelStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+                area.AxisY.LabelStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+            }
 
+            // Remover bordas
+            chart.BorderSkin.SkinStyle = BorderSkinStyle.None;
+            chart.BackColor = Color.White;
 
+            // Estilo das legendas
+            foreach (Legend legend in chart.Legends)
+            {
+                legend.Font = new Font("Arial", 10, FontStyle.Regular);
+                legend.BorderColor = Color.Transparent;
+            }
 
+            // Títulos mais destacados
+            foreach (Title title in chart.Titles)
+            {
+                title.Font = new Font("Arial", 12, FontStyle.Bold);
+            }
 
-
-
-
+            // Ajuste padrão das séries
+            foreach (Series s in chart.Series)
+            {
+                s.BorderWidth = 0;
+                s.Font = new Font("Arial", 10, FontStyle.Bold);
+                s.LabelForeColor = Color.Black;
+                s.IsValueShownAsLabel = true;
+            }
+        }
 
 
 
