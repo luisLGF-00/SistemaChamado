@@ -44,7 +44,14 @@ namespace SistemaChamado
             // Verificando se o email é válido
             if (!txtEmail.Text.EndsWith("@gmail.com") && !txtEmail.Text.EndsWith("@outlook.com") && !txtEmail.Text.EndsWith("@icloud.com"))
             {
-                MessageBox.Show("Insira um email válido", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Insira um email válido.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Verificando se há caracteres antes do '@'
+            if (!txtEmail.Text.Contains("@") || txtEmail.Text.StartsWith("@"))
+            {
+                MessageBox.Show("O email deve conter caracteres antes do '@'.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -91,6 +98,7 @@ namespace SistemaChamado
                 }
             }
         }
+
     }
 }
 
