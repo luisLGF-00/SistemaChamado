@@ -12,13 +12,24 @@ namespace SistemaChamado
     {
         private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
 
+        public int Verificador { get; set; }
+
+        public frmRegistro(int verificador)
+        {
+            InitializeComponent();
+            Verificador = verificador;
+
+        }
+
         public frmRegistro()
         {
             InitializeComponent();
 
+           
+
             // Eventos de saída dos campos
             txtIdChamado.Leave += txtIdChamado_Leave;
-            
+
             cbPrioridade.SelectedIndexChanged += cbPrioridade_SelectedIndexChanged;
             pictureBox1.Click += pictureBox1_Click;
 
@@ -37,7 +48,18 @@ namespace SistemaChamado
         {
             CarregarCombosIniciais();
             txtIdChamado.KeyDown += txtIdChamado_KeyDown;
+            VerificarID();
 
+
+            if (Verificador == 1)
+            {
+                cbNomeCliente.Visible = true;
+
+            }
+            else
+            {
+                cbNomeCliente.Visible = false;
+            }
         }
         private void txtIdChamado_KeyDown(object sender, KeyEventArgs e)
         {
@@ -45,6 +67,23 @@ namespace SistemaChamado
             {
                 e.SuppressKeyPress = true; // Evita o som padrão do "Enter" no campo de texto
                 BuscarPorIdChamado(txtIdChamado.Text);
+            }
+        }
+        //
+        private void VerificarID()
+        {
+            string query = @"SELECT ISNULL (MAX(idChamado), 0) AS MaiorId FROM tblChamado";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query,conn))
+            {
+                conn.Open();
+                object resultado = cmd.ExecuteScalar();
+                int maiorId = Convert.ToInt32(resultado);
+                maiorId = maiorId + 1;
+                txtIdChamado.Text = maiorId.ToString();
+
+
+
             }
         }
 
@@ -93,6 +132,7 @@ namespace SistemaChamado
             txtDescricao.Clear();
             cbStatus.SelectedIndex = -1;
             cbPrioridade.SelectedIndex = -1;
+            txtIdChamado.Clear();
         }
 
         // Buscar e preencher os dados pelo ID do chamado
@@ -183,16 +223,32 @@ namespace SistemaChamado
             }
         }
 
+            
+            public double Resultado { get; set; }
+
+            public frmRegistro(double resultado)
+            {
+                InitializeComponent();
+                Resultado = resultado;
+                
+            }
+        
+
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
+            frmAvaliacaoAtendimento.ShowDialog();
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    string query = @"INSERT INTO tblChamado (Nome, Dt, Descricao, Stts, Prioridade) 
-                             VALUES (@Nome, @Dt, @Descricao, @Stts, @Prioridade)";
+                    string query = @"INSERT INTO tblChamado (Nome, Dt, Descricao, Stts, Prioridade, Avaliacao) 
+                             VALUES (@Nome, @Dt, @Descricao, @Stts, @Prioridade, @Avaliacao)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -211,6 +267,8 @@ namespace SistemaChamado
                         cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
                         cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Avaliacao", Resultado);
+
 
                         cmd.ExecuteNonQuery();
                     }

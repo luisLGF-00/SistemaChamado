@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtIdChamado = new System.Windows.Forms.TextBox();
             this.lbIdChamado = new System.Windows.Forms.Label();
+            this.cbNomeCliente = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,11 +157,20 @@
             this.lbIdChamado.TabIndex = 11;
             this.lbIdChamado.Text = "ID";
             // 
+            // cbNomeCliente
+            // 
+            this.cbNomeCliente.FormattingEnabled = true;
+            this.cbNomeCliente.Location = new System.Drawing.Point(54, 135);
+            this.cbNomeCliente.Name = "cbNomeCliente";
+            this.cbNomeCliente.Size = new System.Drawing.Size(546, 21);
+            this.cbNomeCliente.TabIndex = 12;
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 500);
+            this.Controls.Add(this.cbNomeCliente);
             this.Controls.Add(this.lbIdChamado);
             this.Controls.Add(this.txtIdChamado);
             this.Controls.Add(this.cbPrioridade);
@@ -194,5 +204,6 @@
         private System.Windows.Forms.ComboBox cbPrioridade;
         private System.Windows.Forms.TextBox txtIdChamado;
         private System.Windows.Forms.Label lbIdChamado;
+        private System.Windows.Forms.ComboBox cbNomeCliente;
     }
 }
