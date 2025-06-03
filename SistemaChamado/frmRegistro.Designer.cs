@@ -96,6 +96,7 @@
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(149, 42);
             this.txtData.TabIndex = 7;
+            this.txtData.TextChanged += new System.EventHandler(this.txtData_TextChanged);
             // 
             // cbStatus
             // 

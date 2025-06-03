@@ -51,6 +51,7 @@ namespace SistemaChamado
             txtIdChamado.KeyDown += txtIdChamado_KeyDown;
             VerificarID();
             cbNomeCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             if (Verificador == 1)
             {
@@ -364,6 +365,11 @@ namespace SistemaChamado
             {
                 MessageBox.Show("Erro ao carregar os dados do chamado: " + ex.Message);
             }
+        }
+
+        private void txtData_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
