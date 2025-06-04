@@ -49,7 +49,12 @@ namespace SistemaChamado
         {
             CarregarCombosIniciais();
             txtIdChamado.KeyDown += txtIdChamado_KeyDown;
-            VerificarID();
+
+            if (Verificador == 1) 
+            {
+                VerificarID();
+            }
+
             cbNomeCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             txtData.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
@@ -118,8 +123,6 @@ namespace SistemaChamado
                 int maiorId = Convert.ToInt32(resultado);
                 maiorId = maiorId + 1;
                 txtIdChamado.Text = maiorId.ToString();
-
-
 
             }
         }
@@ -346,11 +349,11 @@ namespace SistemaChamado
                         cmd.Parameters.AddWithValue("@IdChamado", idChamado);
                         conn.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
-
+                        
                         if (reader.Read())
                         {
                             // Preenche os controles do frmRelatorio com os dados do banco
-                            txtIdChamado.Text = reader["idChamado"].ToString();
+                            txtIdChamado.Text = idChamado.ToString();
                             txtCliente.Text = $"{reader["Nome"]}";
                             txtDescricao.Text = $"{reader["Descricao"]}";
                             txtData.Text = $"{Convert.ToDateTime(reader["Dt"]).ToShortDateString()}";
