@@ -90,7 +90,7 @@
             // txtData
             // 
             this.txtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtData.Location = new System.Drawing.Point(614, 129);
             this.txtData.Multiline = true;
             this.txtData.Name = "txtData";
@@ -141,7 +141,7 @@
             // 
             this.txtIdChamado.BackColor = System.Drawing.SystemColors.Menu;
             this.txtIdChamado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdChamado.Location = new System.Drawing.Point(54, 44);
             this.txtIdChamado.Multiline = true;
             this.txtIdChamado.Name = "txtIdChamado";
@@ -160,10 +160,12 @@
             // 
             // cbNomeCliente
             // 
+            this.cbNomeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNomeCliente.FormattingEnabled = true;
             this.cbNomeCliente.Location = new System.Drawing.Point(54, 135);
             this.cbNomeCliente.Name = "cbNomeCliente";
-            this.cbNomeCliente.Size = new System.Drawing.Size(546, 21);
+            this.cbNomeCliente.Size = new System.Drawing.Size(546, 24);
             this.cbNomeCliente.TabIndex = 12;
             // 
             // frmRegistro
