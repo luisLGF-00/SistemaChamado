@@ -13,9 +13,14 @@ namespace SistemaChamado
     {
         private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
 
-        public int Verificador { get; set; }
+        string strConexao = @"Data Source=.\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
+        SqlConnection objConexao;
+        string dados = "";
+
+        public int Verificador { get; set; }    
 
         public frmRegistro(int verificador)
+
         {
             InitializeComponent();
             Verificador = verificador;
@@ -277,55 +282,120 @@ namespace SistemaChamado
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            
+
             this.Hide();
-            frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
-            frmAvaliacaoAtendimento.ShowDialog();
-
-            try
+            if (cbStatus.Text == "Fechado")
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
+                frmAvaliacaoAtendimento.ShowDialog();
+                dados = "fim";
+            }
+
+
+
+            if (Verificador == 0)
+            {
+                // Atualiza os dados
+                try
                 {
-                    conn.Open();
+                    objConexao = new SqlConnection(strConexao);
+                    objConexao.Open();
 
-                    string query = @"INSERT INTO tblChamado (Nome, Dt, Descricao, Stts, Prioridade, Avaliacao) 
-                             VALUES (@Nome, @Dt, @Descricao, @Stts, @Prioridade, @Avaliacao)";
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE tblChamado SET Nome = @Nome, Dt = @Dt, Descricao = @Descricao, Stts = @Stts, Prioridade = @Prioridade, Avaliacao = @Avaliacao WHERE idChamado = @idChamado",
+                        objConexao);
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    cmd.Parameters.AddWithValue("@Nome", txtCliente.Text);
+
+                    DateTime dataChamado;
+                    if (DateTime.TryParse(txtData.Text, out dataChamado))
+                        cmd.Parameters.AddWithValue("@Dt", dataChamado);
+                    else
+                        cmd.Parameters.AddWithValue("@Dt", DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
+                    cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                    if (dados == "")
                     {
-                        cmd.Parameters.AddWithValue("@Nome", txtCliente.Text);
-
-                        DateTime dataChamado;
-                        if (DateTime.TryParse(txtData.Text, out dataChamado))
-                        {
-                            cmd.Parameters.AddWithValue("@Dt", dataChamado);
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@Dt", DBNull.Value);
-                        }
-
-                        cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
-                        cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Avaliacao", Resultado);
-
-
-                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@Avaliacao", 0);
                     }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Avaliacao", Resultado);
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@idChamado", int.Parse(txtIdChamado.Text));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Chamado atualizado com sucesso!", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao atualizar chamado: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (objConexao.State == ConnectionState.Open)
+                        objConexao.Close();
                 }
 
-                MessageBox.Show("Chamado salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimparCampos();
+
             }
-            catch (Exception ex)
+            if (Verificador == 1)
             {
-                MessageBox.Show($"Erro ao salvar chamado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+
+                        string query = @"INSERT INTO tblChamado (Nome, Dt, Descricao, Stts, Prioridade, Avaliacao) 
+                             VALUES (@Nome, @Dt, @Descricao, @Stts, @Prioridade, @Avaliacao)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Nome", txtCliente.Text);
+
+                            DateTime dataChamado;
+                            if (DateTime.TryParse(txtData.Text, out dataChamado))
+                            {
+                                cmd.Parameters.AddWithValue("@Dt", dataChamado);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@Dt", DBNull.Value);
+                            }
+
+                            cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
+                            cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                            cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                            if (dados == "")
+                            {
+                                cmd.Parameters.AddWithValue("@Avaliacao", 0);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@Avaliacao", Resultado);
+                            }
+
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    MessageBox.Show("Chamado salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao salvar chamado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
         }
-
-
-
-
 
         private void lbLogin_Click(object sender, EventArgs e)
         {

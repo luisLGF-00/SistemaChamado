@@ -16,7 +16,7 @@ namespace SistemaChamado
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDiretorio());
+            Application.Run(new frmPrincipal());
         }
     }
 }
