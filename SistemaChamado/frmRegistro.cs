@@ -66,6 +66,7 @@ namespace SistemaChamado
             if (Verificador == 1)
             {
                 cbNomeCliente.Visible = true;
+                txtCliente.Visible = false;
 
 
 

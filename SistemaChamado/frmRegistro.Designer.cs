@@ -69,6 +69,7 @@
             // 
             // txtCliente
             // 
+            this.txtCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(54, 129);
@@ -79,6 +80,7 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.Location = new System.Drawing.Point(54, 216);
@@ -89,6 +91,7 @@
             // 
             // txtData
             // 
+            this.txtData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtData.Location = new System.Drawing.Point(614, 129);
@@ -100,6 +103,7 @@
             // 
             // cbStatus
             // 
+            this.cbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.cbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
@@ -116,6 +120,7 @@
             // 
             // cbPrioridade
             // 
+            this.cbPrioridade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.cbPrioridade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPrioridade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPrioridade.FormattingEnabled = true;
@@ -160,10 +165,11 @@
             // 
             // cbNomeCliente
             // 
+            this.cbNomeCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.cbNomeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNomeCliente.FormattingEnabled = true;
-            this.cbNomeCliente.Location = new System.Drawing.Point(54, 135);
+            this.cbNomeCliente.Location = new System.Drawing.Point(54, 138);
             this.cbNomeCliente.Name = "cbNomeCliente";
             this.cbNomeCliente.Size = new System.Drawing.Size(546, 24);
             this.cbNomeCliente.TabIndex = 12;
