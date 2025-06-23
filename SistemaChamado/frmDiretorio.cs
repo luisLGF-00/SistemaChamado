@@ -40,7 +40,6 @@ namespace SistemaChamado
         private void btnChamado_Click(object sender, EventArgs e)
         {
             
-
             int Verificador = 1;
 
             this.Hide();
