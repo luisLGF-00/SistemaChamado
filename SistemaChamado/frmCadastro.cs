@@ -9,10 +9,11 @@ namespace SistemaChamado
     public partial class frmCadastro : Form
     {
         string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
-
-        public frmCadastro()
+        private int usuarioId;
+        public frmCadastro(int idUsuario)
         {
             InitializeComponent();
+            usuarioId = idUsuario;
         }
 
         private void frmCadastro_Load(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace SistemaChamado
         private void lbDiretorio_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmDiretorio frmDiretorio = new frmDiretorio();
+            frmDiretorio frmDiretorio = new frmDiretorio(usuarioId);
             frmDiretorio.ShowDialog();
         }
 

@@ -17,12 +17,15 @@ namespace SistemaChamado
 {
     public partial class frmRelatorio : Form
     {
+
+        private int usuarioId;
         private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
 
-        public frmRelatorio()
+        public frmRelatorio(int idUsuario)
         {
             InitializeComponent();
             AtualizarGraficos(); // Atualiza ao iniciar o formulário
+            usuarioId = idUsuario;
 
         }
 
@@ -73,7 +76,7 @@ namespace SistemaChamado
         private void lbRelatorio_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmDiretorio frmDiretorio = new frmDiretorio();
+            frmDiretorio frmDiretorio = new frmDiretorio(usuarioId);
             frmDiretorio.ShowDialog();
         }
 
