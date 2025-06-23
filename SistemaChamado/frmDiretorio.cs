@@ -14,9 +14,12 @@ namespace SistemaChamado
 {
     public partial class frmDiretorio : Form
     {
-        public frmDiretorio()
+        private int usuarioId;
+
+        public frmDiretorio(int idUsuario)
         {
             InitializeComponent();
+            usuarioId = idUsuario;
         }
 
         private void frmDiretorio_Load(object sender, EventArgs e)
@@ -43,7 +46,7 @@ namespace SistemaChamado
             int Verificador = 1;
 
             this.Hide();
-            frmRegistro frmRegistro = new frmRegistro(Verificador);
+            frmRegistro frmRegistro = new frmRegistro(Verificador, usuarioId);
             frmRegistro.ShowDialog();
             this.Close();
         }
@@ -51,7 +54,7 @@ namespace SistemaChamado
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmRelatorio frmRelatorio = new frmRelatorio();
+            frmRelatorio frmRelatorio = new frmRelatorio(usuarioId);
             frmRelatorio.ShowDialog();
             this.Close();
 
@@ -69,7 +72,7 @@ namespace SistemaChamado
         {
             
             this.Hide();
-            frmCadastro frmCadastro = new frmCadastro();
+            frmCadastro frmCadastro = new frmCadastro(usuarioId);
             frmCadastro.ShowDialog();
             this.Close();
         }

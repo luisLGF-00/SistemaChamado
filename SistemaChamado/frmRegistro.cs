@@ -11,6 +11,9 @@ namespace SistemaChamado
 {
     public partial class frmRegistro : Form
     {
+        Dictionary<string, int> clientesDict = new Dictionary<string, int>();
+        public int UsuarioId { get; set; }
+
         private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
 
         string strConexao = @"Data Source=.\SQLEXPRESS;Initial Catalog=dbChamado;Integrated Security=True";
@@ -19,11 +22,13 @@ namespace SistemaChamado
 
         public int Verificador { get; set; }    
 
-        public frmRegistro(int verificador)
+        public frmRegistro(int verificador, int usuarioId, double resultado = 0)
 
         {
             InitializeComponent();
             Verificador = verificador;
+            UsuarioId = usuarioId;
+            Resultado = resultado;
 
         }
 
@@ -79,11 +84,15 @@ namespace SistemaChamado
                         SqlCommand cmd = new SqlCommand(query, conexao);
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        cbNomeCliente.Items.Clear(); // Limpa os itens antes de adicionar novos
+                        clientesDict.Clear();
+                        cbNomeCliente.Items.Clear();
+
                         while (reader.Read())
                         {
-                            cbNomeCliente.Items.Add(reader["Nome"].ToString());
-
+                            string nome = reader["Nome"].ToString();
+                            int id = Convert.ToInt32(reader["idCliente"]);
+                            cbNomeCliente.Items.Add(nome);
+                            clientesDict[nome] = id;
                         }
 
 
@@ -286,12 +295,22 @@ namespace SistemaChamado
             
 
             this.Hide();
+
             if (cbStatus.Text == "Fechado")
             {
-                frmAvaliacaoAtendimento frmAvaliacaoAtendimento = new frmAvaliacaoAtendimento();
-                frmAvaliacaoAtendimento.ShowDialog();
-                dados = "fim";
+                frmAvaliacaoAtendimento avaliacaoForm = new frmAvaliacaoAtendimento();
+                if (avaliacaoForm.ShowDialog() == DialogResult.OK)
+                {
+                    Resultado = avaliacaoForm.ResultadoFinal;
+                    dados = "fim";
+                }
+                else
+                {
+                    MessageBox.Show("Avaliação não concluída.");
+                    return;
+                }
             }
+
 
 
 
@@ -318,6 +337,9 @@ namespace SistemaChamado
                     cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
                     cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
+
+
+                    //Realiza o insert ou Update conforme avaliação
                     if (dados == "")
                     {
                         cmd.Parameters.AddWithValue("@Avaliacao", 0);
@@ -353,12 +375,25 @@ namespace SistemaChamado
                     {
                         conn.Open();
 
-                        string query = @"INSERT INTO tblChamado (Nome, Dt, Descricao, Stts, Prioridade, Avaliacao) 
-                             VALUES (@Nome, @Dt, @Descricao, @Stts, @Prioridade, @Avaliacao)";
+                        string query = @"INSERT INTO tblChamado (idCliente, idUsuario, Nome, Dt, Descricao, Stts, Prioridade, Avaliacao) 
+                                         VALUES (@idCliente, @idUsuario, @Nome, @Dt, @Descricao, @Stts, @Prioridade, @Avaliacao)";
+
+
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@Nome", txtCliente.Text);
+                            if (cbNomeCliente.SelectedItem != null && clientesDict.TryGetValue(cbNomeCliente.SelectedItem.ToString(), out int idCliente))
+                            {
+                                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Selecione um cliente válido.");
+                                return;
+                            }
+
+                            cmd.Parameters.AddWithValue("@idUsuario", UsuarioId);
+                            cmd.Parameters.AddWithValue("@Nome", cbNomeCliente.SelectedItem.ToString());
 
                             DateTime dataChamado;
                             if (DateTime.TryParse(txtData.Text, out dataChamado))
@@ -370,18 +405,11 @@ namespace SistemaChamado
                                 cmd.Parameters.AddWithValue("@Dt", DBNull.Value);
                             }
 
+
                             cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
                             cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
                             cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
-                            if (dados == "")
-                            {
-                                cmd.Parameters.AddWithValue("@Avaliacao", 0);
-                            }
-                            else
-                            {
-                                cmd.Parameters.AddWithValue("@Avaliacao", Resultado);
-                            }
-
+                            cmd.Parameters.AddWithValue("@Avaliacao", string.IsNullOrEmpty(dados) ? 0 : Resultado);
 
                             cmd.ExecuteNonQuery();
                         }
@@ -401,7 +429,7 @@ namespace SistemaChamado
         private void lbLogin_Click(object sender, EventArgs e)
         {
             this.Close();
-            var frmDiretorio = new frmDiretorio();
+            var frmDiretorio = new frmDiretorio(UsuarioId); // passa o ID corretamente
             frmDiretorio.Show();
         }
 

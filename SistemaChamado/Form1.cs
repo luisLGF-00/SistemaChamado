@@ -46,29 +46,32 @@ namespace SistemaChamado
                 try
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*) FROM tblUsuario WHERE Nome = @usuario AND Senha = @senha";
+                    string query = "SELECT idUsuario FROM tblUsuario WHERE Nome = @usuario AND Senha = @senha";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@usuario", usuario);
                         cmd.Parameters.AddWithValue("@senha", senha);
 
-                        int count = (int)cmd.ExecuteScalar();
+                        object result = cmd.ExecuteScalar();
 
-                        if (count > 0)
+                        if (result != null)
                         {
-                            tentativas = 0; // Reseta o contador em caso de sucesso
+                            int idUsuario = Convert.ToInt32(result);
+                            tentativas = 0;
+
                             this.Hide();
-                            frmDiretorio frmDiretorio = new frmDiretorio();
+
+                            // ✅ passa o id para o frmDiretorio
+                            frmDiretorio frmDiretorio = new frmDiretorio(idUsuario);
                             frmDiretorio.ShowDialog();
-                            //
                         }
                         else
                         {
                             tentativas++;
                             if (tentativas >= 5)
                             {
-                                MessageBox.Show("Muitas tentativas falhas! Por favor, procure o administrador.", "Acesso Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Muitas tentativas falhas! Procure o administrador.", "Acesso Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                             else
                             {
