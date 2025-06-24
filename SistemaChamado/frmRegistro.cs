@@ -227,13 +227,27 @@ namespace SistemaChamado
                                 
 
                                 // Adicionando os valores ao ComboBox antes de selecionar
-                                cbStatus.Items.Clear();
-                                cbStatus.Items.Add(reader["Stts"].ToString());
-                                cbStatus.SelectedItem = reader["Stts"].ToString();
+                                //cbStatus.Items.Clear();
+                                //cbStatus.Items.Add(reader["Stts"].ToString());
+                                //cbStatus.SelectedItem = reader["Stts"].ToString();
 
-                                cbPrioridade.Items.Clear();
-                                cbPrioridade.Items.Add(reader["Prioridade"].ToString());
-                                cbPrioridade.SelectedItem = reader["Prioridade"].ToString();
+                                //cbPrioridade.Items.Clear();
+                                //cbPrioridade.Items.Add(reader["Prioridade"].ToString());
+                                //cbPrioridade.SelectedItem = reader["Prioridade"].ToString();
+
+                                string status = reader["Stts"].ToString();
+                                string prioridade = reader["Prioridade"].ToString();
+
+                                if (cbStatus.Items.Contains(status))
+                                    cbStatus.SelectedItem = status;
+                                else
+                                    cbStatus.Items.Add(status); cbStatus.SelectedItem = status;
+
+                                if (cbPrioridade.Items.Contains(prioridade))
+                                    cbPrioridade.SelectedItem = prioridade;
+                                else
+                                    cbPrioridade.Items.Add(prioridade); cbPrioridade.SelectedItem = prioridade;
+
                             }
                             else
                             {
@@ -335,8 +349,8 @@ namespace SistemaChamado
                         cmd.Parameters.AddWithValue("@Dt", DBNull.Value);
 
                     cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
-                    cmd.Parameters.AddWithValue("@Stts", cbStatus.SelectedItem?.ToString() ?? (object)DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Prioridade", cbPrioridade.SelectedItem?.ToString() ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Stts", string.IsNullOrWhiteSpace(cbStatus.Text) ? (object)DBNull.Value : cbStatus.Text);
+                    cmd.Parameters.AddWithValue("@Prioridade", string.IsNullOrWhiteSpace(cbPrioridade.Text) ? (object)DBNull.Value : cbPrioridade.Text);
 
 
                     //Realiza o insert ou Update conforme avaliação
